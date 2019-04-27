@@ -1,0 +1,51 @@
+<p>
+  <button (click)="checkVariables()">Check Variables</button>
+</p>
+
+
+<p>This component is grabbing data from the user's Google Calendar</p>
+
+<p *ngIf="!events"><em>Loading...</em></p>
+
+<table class='table' *ngIf="events">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Event Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Creator</th>
+      <th>Created On</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--<tr *ngFor="let eventItem of events.items" (click)="rowClick(eventItem.id)">-->
+    <tr *ngFor="let eventItem of events.items" [routerLink]="['/details', eventItem.id]">
+      <td>{{ eventItem.id }}</td>
+      <td>{{ eventItem.summary }}</td>
+      <td>{{ eventItem.start.dateTime | date:'short'}}</td>
+      <td>{{ eventItem.end.dateTime | date:'short'}}</td>
+      <td>{{ eventItem.creator.email }}</td>
+      <td>{{ eventItem.created }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<a [routerLink]="['/Records', Member.Name]"><td> {{Member.Name}} <td></a>-->
+
+
+ <!--Location: string;
+  Locked: boolean;
+  Organizer: any;
+  OriginalStartTime: any;
+  Recurrence: any;
+  RecurringEventId: any;
+  Sequence: any;
+  Source: any;
+  Start: any;
+  Status: any;
+  Summary: any;
+  Id: any;
+  Creator: any;
+  Created: any;
+  End: any;-->

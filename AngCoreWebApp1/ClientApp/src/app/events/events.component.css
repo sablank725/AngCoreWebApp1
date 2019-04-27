@@ -1,0 +1,6 @@
+tbody tr:hover,
+tbody tr:focus {
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+}

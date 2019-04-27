@@ -1,0 +1,38 @@
+<p>
+  event-details works!
+</p>
+
+<label>Here is the Record ID: {{ recordId }}</label>
+<br />
+<br />
+<br />
+<label>
+  Summary:
+  <input type="text" value="{{ event.summary }}">
+</label>
+<br />
+<label>
+  Start:
+  <input type="text" value="{{ event.start.dateTime | date:'short'}}">
+</label>
+<br />
+<label>
+  End:
+  <input type="text" value="{{ event.end.dateTime | date:'short'}}">
+</label>
+
+<!--Location: string;
+  Locked: boolean;
+  Organizer: any;
+  OriginalStartTime: any;
+  Recurrence: any;
+  RecurringEventId: any;
+  Sequence: any;
+  Source: any;
+  Start: any;
+  Status: any;
+  Summary: any;
+  Id: any;
+  Creator: any;
+  Created: any;
+  End: any;-->
